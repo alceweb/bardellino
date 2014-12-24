@@ -124,8 +124,13 @@ h5, h6 {
 .Promo {
     color: #413625;
 }
+    .Promo span {
+        display:inline-block;
+    }
     .Promo img {
     float: left;
+    bottom:0px;
+    display:table;
     height: 250px;
     border: none;
     border-radius: 5px;
