@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="it">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Cascina Bardellino</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.colorbox.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/colorbox.css" rel="stylesheet" />
+    <asp:PlaceHolder runat="server">           
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/ui-calendar.css" rel="Stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+   
+</head>
+<body>
+    <form runat="server">
+    <header>
+        <div class="content-wrapper">
+            <!--modifica almish-->
+            <div class="header_block">
+                <div class="address_block">
+                    <strong>Cascina Bardellino- La Padella e La Brace<br /></strong>
+                    Via Roma, 26<br />
+                    Castel Gabbiano (Bg)<br />
+                    P.IVA -------- <br />
+                    Tel. 0373 419535 - 335 6943774/772
+                </div>
+                <div class="float-right">
+                </div>
+                
+            </div>
+                        <ul id="menu">
+                            <li ><a id="A2" runat="server" href="~/Default.aspx">Home</a></li>
+                            <li><a id="A3" runat="server" href="~/dove-siamo.aspx">Dove siamo</a></li>
+                             <li><a id="A1" runat="server" href="~/Servizi.aspx">Servizi</a></li>
+                            <li><a id="A5" runat="server" href="~/Contatti.aspx">Contatto</a></li>
+                       </ul>
+        </div>
+    </header>
+  <div id="body">
+<%--        <img class="bg" src="SlideImg/<%: Page.Title %>1.jpg" />--%>
+      <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+        <footer><hr />
+            <div class="Float-left">
+                    <a href="Admin.aspx"><img height="20" src="Images/modifica.gif" /></a>
+                Via Roma, 26 - Castel Gabbiano (BG) - Tel. +39 0373 419535 - 335 6943774/772
+                <span class="float-right">
+                    <p>
+                       &copy; 2014<a href="http://www.cr-consult.eu" target="_blank" style="color: #685840; font-size: 12px;"><em>Almish</em><span style="color:#FF0000" lang="it">&amp;</span><em>Cesàre</em><span style="color:#FF0000">W</span><em>eb</em></a>
+                    </p>
+                </span>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
