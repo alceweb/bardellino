@@ -150,7 +150,10 @@ h5, h6 {
     transition: all 1s ease;
 }
         .PromoDef a:hover {
-    text-shadow: 0px 0px 10px 5px #000, 0 0 1em red, 0 0 0.2em #29190c;
+    text-shadow: 0px 0px 10px 5px #fff, 0 0 1em red, 0 0 0.2em #29190c;
+        -ms-transform: scale(1,4); /* IE 9 */
+        -webkit-transform: scale(1,4); /* Chrome, Safari, Opera */
+        transform: scale(1,4);
         -ms-transform: rotate(7deg); /* IE 9 */
         -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
         transform: rotate(7deg);

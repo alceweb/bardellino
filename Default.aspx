@@ -52,10 +52,8 @@
                 <li>
                     <img src="Slideshow/images/large/6.jpg" />
                     <div class="ei-title">
-                        <a href="#nogo">
                             <h2>Foto sei</h2>
                             <h3>Descrizione foto sei</h3>
-                        </a>
                     </div>
                 </li>
                 <li>
@@ -69,12 +67,12 @@
             <!-- ei-slider-large -->
             <ul class="ei-slider-thumbs">
 <%--                <li class="ei-slider-element">Current</li>--%>
-                <li><a href="#">Slide 6</a><img src="Slideshow/images/thumbs/6.jpg" /></li>
                 <li><a href="#">Slide 1</a><img src="Slideshow/images/thumbs/1.jpg" /></li>
                 <li><a href="#">Slide 2</a><img src="Slideshow/images/thumbs/2.jpg" /></li>
                 <li><a href="#">Slide 3</a><img src="Slideshow/images/thumbs/3.jpg" /></li>
                 <li><a href="#">Slide 4</a><img src="Slideshow/images/thumbs/4.jpg" /></li>
                 <li><a href="#">Slide 5</a><img src="Slideshow/images/thumbs/5.jpg" /></li>
+                <li><a href="#">Slide 6</a><img src="Slideshow/images/thumbs/6.jpg" /></li>
                 <li><a href="#">Slide 7</a><img src="Slideshow/images/thumbs/7.jpg" /></li>
             </ul>
             <!-- ei-slider-thumbs -->
