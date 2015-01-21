@@ -15,19 +15,19 @@
              $(".group2").colorbox({ maxHeight: '100%', rel: 'group2', transition: 'fade' });
              $(".group3").colorbox({ maxHeight: '100%', rel: 'group3', transition: 'fade' });
              $(".group4").colorbox({ maxHeight: '100%', rel: 'group4', transition: 'fade' });
+             $(".group5").colorbox({ maxHeight: '100%', rel: 'group5', transition: 'fade' });
          });
 		</script>
-    <table class="tbl2" >
+<%--    <table class="tbl2" >
         <tr>
-            <td >
-                <h2>Servizi</h2>
+            <td colspan="2" >
+                <h2 style="text-align:center">Servizi</h2>
             </td>
-            <td></td>
         </tr>
         <tr>
             <td >
                 <h3>Matrimoni</h3>
-                <p>Descrizione della proposta per matrimonio</p>
+                <p><em>Descrizione della proposta per matrimonio</em></p>
                 <br/>
             </td>
             <td >
@@ -49,7 +49,7 @@
         <tr>
             <td>
                  <h3>Cerimonie</h3>
-                <p>Descrizione della proposta per cerimonie</p>
+                <p><em>Descrizione della proposta per cerimonie</em></p>
             <br/>
             </td>
             <td>
@@ -70,7 +70,7 @@
         <tr>
             <td ">
             <h3>Comunioni</h3>
-            <p>Descrizione della proposta per cmunioni
+            <p>Descrizione della proposta per comunioni
             </p>
             <br/>
             </td>
@@ -86,7 +86,7 @@
         <tr>
             <td >
         <h3>Ristorante</h3>
-        <p><em>Decrizione della proposta ristorante</p>
+        <p><em>Decrizione della proposta ristorante</em></p>
             <br/>
             </td>
             <td>
@@ -98,8 +98,8 @@
         <tr>
             <td >
         <h3>Parco</h3>
-        <p>Descrizione della proposta parco.</p><br />
-<br/><hr />
+        <p><em>Descrizione della proposta parco</em></p><br />
+<br/>
             </td>
             <td>
                 <a class="group4" href="Images/Pa1l.jpg" title="Ristorante La Fonte"><img src="Images/Pa1.jpg" /></a>
@@ -107,6 +107,63 @@
                 <a class="group4" href="Images/Pa3l.jpg" title="Ristorante La Fonte"><img src="Images/Pa13jpg" /></a>
            </td>
         </tr>
-      </table>
+      </table>--%>
+    <div>
+    <asp:ListView ID="ListView1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" SelectedIndex="-1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+        <ItemTemplate>
+            <tr >
+                <td style="background-image: url('Images/Sfondo.png'); max-width:300px">
+                    <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2><br />
+                    <asp:Label ID="DescrizioneLabel" runat="server" Text='<%# Eval("Descrizione") %>' />
+                </td>
+                <td style="text-align:center">
+                    <asp:LinkButton ID="linkbGalle" CommandName="Select" runat="server"><img src='<%# "Images/Servizi/" + Eval("Id") + ".jpg"  %>' /></asp:LinkButton>
+                    <a class='<%# "group" + Eval("Id")%>' href='<%# "Images/Servizi/" + Eval("Id") + ".jpg"%>'></a><br />
+                    <asp:LinkButton ID="linkbInfo" runat="server">Informazioni</asp:LinkButton><br />
+                </td>
+            </tr>
+        </ItemTemplate>
+        <SelectedItemTemplate>
+            <tr style="">
+                <td style="background-image: url('Images/Sfondo.png'); max-width:600px">
+                    <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2>
+                    <asp:Label ID="DescrizioneLabel" runat="server" Text='<%# Eval("Descrizione") %>' />
+                </td><hr />
+                <td>
+                    <asp:LinkButton ID="linkbInfo" OnClick="linkbInfo_Click" runat="server">Tutti i servizi</asp:LinkButton>
+                </td>
+            </tr>
+        </SelectedItemTemplate>
+        <LayoutTemplate>
+            <div class="servizi" runat="server">
+                        <table class="tbl2" id="itemPlaceholderContainer" runat="server" border="0" style="">
+                            <tr id="itemPlaceholder" runat="server">
+                            </tr>
+                            <tr runat="server" style="">
+                            </tr>
+                        </table>
+            </div>
+        </LayoutTemplate>
+     </asp:ListView>
+     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+         ConnectionString="<%$ ConnectionStrings:ConnString %>" 
+         SelectCommand="SELECT * FROM [baserv]">
+
+     </asp:SqlDataSource>
+    </div>
+    <div class="rep1" >
+        <asp:Repeater ID="lista" runat="server">
+            <HeaderTemplate>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <span>
+                    <a class='<%# "group" + ListView1.SelectedValue.ToString() %>' href="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>">
+                        <img src="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>" />
+                    </a>
+                </span>
+            </ItemTemplate>
+            <FooterTemplate></FooterTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>
 

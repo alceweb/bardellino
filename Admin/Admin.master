@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery.dynDateTime.min.js"></script>
+    <script src="Scripts/calendar-en.min.js"></script>
+    <link href="Content/calendar-blue.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+                <div class="content-wrapper">
+                    <div class="header_block">
+                        <div class="header_logo">Sito Admin</div>
+                        <div class="address_block">
+                            <strong>Cascina Bardellino- La Padella e La Brace<br />
+                            </strong>
+                            Via Roma, 26<br />
+                            Castel Gabbiano (Bg)<br />
+                            P.IVA --------
+                            <br />
+                            Tel. 0373 419535 - 335 6943774/772
+                        </div>
+                        <div class="float-right">
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+            <span><a runat="server" href="~/Default.aspx" class="linkap float-left">Torna al sito</a></span>
+            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#B5C7DE" />
+                <DynamicSelectedStyle BackColor="#507CD1" />
+                <Items>
+                    <asp:MenuItem Text="Promo" Value="Promo">
+                        <asp:MenuItem Text="Modifica" Value="Modifica" NavigateUrl="~/Admin/PromoEdit.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Nuovo" Value="Nuovo" NavigateUrl="~/Admin/PromoAdd.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Offerte" Value="Offerte">
+                        <asp:MenuItem Text="Modifica" Value="Modifica" NavigateUrl="~/Admin/OffEdit.aspx">
+</asp:MenuItem>
+<asp:MenuItem Text="Nuovo" Value="Nuovo" NavigateUrl="~/Admin/OffAdd.aspx">
+</asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Immagini slide" Value="Immagini slide">
+                        <asp:MenuItem Text="Gestione" Value="Gestione" NavigateUrl="~/Admin/SlideBEdit.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Servizi" Value="Servizi">
+                        <asp:MenuItem Text="Modifica" NavigateUrl="~/Admin/SerEdit.aspx" Value="Modifica"></asp:MenuItem>
+                        <asp:MenuItem Text="Gestione galleria" Value="Gestione galleria" NavigateUrl="~/Admin/SerGallEdit.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#507CD1" />
+            </asp:Menu>
+            <h2><%: Page.Title %></h2>
+            <hr />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

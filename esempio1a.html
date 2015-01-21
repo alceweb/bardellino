@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+    <title>HTML.it - Nivo Slider - Esempio 1a</title>
+    <link rel="stylesheet" href="stili/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="stili/style.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="slider" class="nivoSlider">
+<img src="images/slider-1.jpg" alt="" />
+<img src="images/slider-2.jpg" alt="" />
+<img src="images/slider-3.jpg" alt="" />
+<img src="images/slider-4.jpg" alt="" />
+</div>
+<script type="text/javascript" src="scripts/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+  $('#slider').nivoSlider({
+  effect:'fade',
+  pauseTime: 5000
+  });
+});
+</script>
+</body>
+</html>

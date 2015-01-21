@@ -12,74 +12,34 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
      <div class="wrapper">
-         <div id="ei-slider" class="ei-slider">
-            <ul class="ei-slider-large">
-                <li>
-                    <img src="Slideshow/images/large/1.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto uno</h2>
-                        <h3>Descrizione foto uno</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/2.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto due</h2>
-                        <h3>Descrizione foto due</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/3.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto 3</h2>
-                        <h3>Descrizione foto3</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/4.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto quattro</h2>
-                        <h3>Descrizione foto quattro</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/5.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto cinque</h2>
-                        <h3>Descrizione foto cinque</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/6.jpg" />
-                    <div class="ei-title">
-                            <h2>Foto sei</h2>
-                            <h3>Descrizione foto sei</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="Slideshow/images/large/7.jpg" />
-                    <div class="ei-title">
-                        <h2>Foto sette</h2>
-                        <h3 >Descrizione foto sette</h3>
-                    </div>
-                </li>
-            </ul>
-            <!-- ei-slider-large -->
-            <ul class="ei-slider-thumbs">
-<%--                <li class="ei-slider-element">Current</li>--%>
-                <li><a href="#">Slide 1</a><img src="Slideshow/images/thumbs/1.jpg" /></li>
-                <li><a href="#">Slide 2</a><img src="Slideshow/images/thumbs/2.jpg" /></li>
-                <li><a href="#">Slide 3</a><img src="Slideshow/images/thumbs/3.jpg" /></li>
-                <li><a href="#">Slide 4</a><img src="Slideshow/images/thumbs/4.jpg" /></li>
-                <li><a href="#">Slide 5</a><img src="Slideshow/images/thumbs/5.jpg" /></li>
-                <li><a href="#">Slide 6</a><img src="Slideshow/images/thumbs/6.jpg" /></li>
-                <li><a href="#">Slide 7</a><img src="Slideshow/images/thumbs/7.jpg" /></li>
-            </ul>
-            <!-- ei-slider-thumbs -->
-        </div>
-        <!-- ei-slider -->
+         <div id="ei-slider" style="z-index:0" class="ei-slider">
+             <ul class="ei-slider-large">
+                 <asp:Repeater ID="lista" runat="server" EnableTheming="False">
+                     <ItemTemplate>
+                         <li>
+                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
+                             <div class="ei-title">
+                             <h2></h2>
+                             <h3></h3>
+
+                             </div>
+                         </li>
+                     </ItemTemplate>
+                 </asp:Repeater>
+
+             </ul>
+             <ul class="ei-slider-thumbs">
+                 <li class="ei-slider-element">Current</li>
+                 <asp:Repeater ID="lista1" runat="server" EnableTheming="False">
+                     <ItemTemplate>
+                         <li><a href="#"></a>
+                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
+                         </li>
+                     </ItemTemplate>
+                 </asp:Repeater>
+             </ul>
+         </div>
     </div>
-    <!-- wrapper -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
         <script type="text/javascript" src="Slideshow/js/jquery.eislideshow.js"></script>
         <script type="text/javascript" src="Slideshow/js/jquery.easing.1.3.js"></script>
@@ -93,30 +53,55 @@
                 });
             });
         </script><br /><br />
-    <div>
+    <div style="margin-top:480px;z-index:-2" >
         <asp:ListView ID="ListView1" runat="server" SelectedIndex="-1" DataKeyNames="Id" DataSourceID="SqlDataSource1">
             <EmptyDataTemplate>
-                <span>Non è stato restituito alcun dato.</span>
+                <span></span>
             </EmptyDataTemplate>
             <ItemTemplate>
-                <a href='<%# "Content.aspx?Id=" + Eval("Id") %>'>'<%# Eval("Titolo") %>'</a>
+                 - <a href='<%# "Content.aspx?Id=" + Eval("Id") %>'>'<%# Eval("Titolo") %>'</a>
                 </span>
             </ItemTemplate>
             <LayoutTemplate>
                 <div class="PromoDef" id="itemPlaceholderContainer" runat="server" style="">
-                    <span runat="server" id="itemPlaceholder" />
+                    <span runat="server" id="itemPlaceholder" />-
                 </div>
+    <hr />
             </LayoutTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnString %>" SelectCommand="SELECT * FROM [bapromo] WHERE ([Id] = @Id)">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="ListView1" Name="Id" PropertyName="SelectedValue" Type="Int32" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-
     </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnString %>"
-            SelectCommand="SELECT * FROM [bapromo] WHERE ([DataInizio] <= { fn NOW() } AND [DataFine] >= { fn NOW() })"></asp:SqlDataSource>
-<%--    <asp:Panel ID="pnlPromo" runat="server" Height="20px">
-    </asp:Panel>--%>
+            SelectCommand="SELECT * FROM [bapromo] WHERE ([DataInizio] <= { fn NOW() } AND [DataFine] >= { fn NOW() })">
+
+        </asp:SqlDataSource>
+        <asp:ListView ID="ListView2" runat="server" SelectedIndex="-1" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+            <EmptyDataTemplate>
+                <span></span>
+            </EmptyDataTemplate>
+            <ItemTemplate>
+                <div class="OffertaDef">
+                <div class="OffertaDefTitolo">
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Titolo") %>'></asp:Label>
+                </div>
+                <asp:Label ID="Label2" runat="server" Text='<%# Eval("Offerta") %>'></asp:Label>
+
+                </div>
+            </ItemTemplate>
+            <ItemSeparatorTemplate>
+            </ItemSeparatorTemplate>
+            <LayoutTemplate>
+                <table>
+                    <tr>
+                        <td>
+                            <div  id="itemPlaceholderContainer" runat="server" style="display:block">
+                                <div runat="server" id="itemPlaceholder" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </LayoutTemplate>
+        </asp:ListView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnString %>"
+            SelectCommand="SELECT * FROM [baoff] WHERE ([DataInizio] <= { fn NOW() } AND [DataFine] >= { fn NOW() })">
+        </asp:SqlDataSource>
 </asp:Content>

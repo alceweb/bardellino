@@ -6,7 +6,7 @@ Sub Login(Sender As Object, e As EventArgs)
     Dim password As String = txtPassword.Text
     If FormsAuthentication.Authenticate(username ,password)
         FormsAuthentication.RedirectFromLoginPage(username, false)
-            Response.Redirect("Admin.aspx")
+            Response.Redirect("Admin/Admin.aspx")
     End If
 End Sub
 </script>

@@ -23,11 +23,12 @@ public partial class Contatti : System.Web.UI.Page
         mMailMessage.From = new MailAddress(from);
         //Aggiungo il destinatario 
         mMailMessage.To.Add(new MailAddress(to));
-        mMailMessage.To.Add(new MailAddress("info@hotelverri.it"));
+        mMailMessage.To.Add(new MailAddress("cascinabardellino@gmail.com"));
+        mMailMessage.To.Add(new MailAddress("mariangela.cascinabardellino@gmail.com"));
         //L'oggetto 
-        mMailMessage.Subject = "Richiesta informazioni da sito web HotelVerri";
+        mMailMessage.Subject = "Richiesta informazioni da sito web Cascina Bardellino";
         //Il corpo 
-        mMailMessage.Body = "Richiesta di informazioni rievuta tramite il sito www.hotelverri.it<br/><br/><strong>Messaggio inviato da:</strong> " + NomeTextBox.Text + " " + CognomeTextBox.Text + "<br/><strong>Mail:</strong> " + MailTextBox.Text + "<br/><strong>Tel:</strong> " + TelTextBox.Text + "<br/><br/><strong>Testo del messaggio:</strong> <br/>" + RichiestaTtBox1.Text;
+        mMailMessage.Body = "Richiesta di informazioni rievuta tramite il sito www.cascinabardellino.it<br/><br/><strong>Messaggio inviato da:</strong> " + NomeTextBox.Text + " " + CognomeTextBox.Text + "<br/><strong>Mail:</strong> " + MailTextBox.Text + "<br/><strong>Tel:</strong> " + TelTextBox.Text + "<br/><br/><strong>Testo del messaggio:</strong> <br/>" + RichiestaTtBox1.Text;
         //Setto la modalità testo, per il contenuto del messaggio. Sarebbe possibile inviare anche dell'HTML mettendo true 
         mMailMessage.IsBodyHtml = true;
         //Setto la priorità 

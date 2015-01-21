@@ -23,7 +23,8 @@ public partial class FormSale : System.Web.UI.Page
         mMailMessage.From = new MailAddress(from);
         //Aggiungo il destinatario 
         mMailMessage.To.Add(new MailAddress(to));
-        mMailMessage.To.Add(new MailAddress("info@hotelverri.it"));
+        mMailMessage.To.Add(new MailAddress("cascinabardellino@gmail.com"));
+        mMailMessage.To.Add(new MailAddress("mariangela.cascinabardellino@gmail.com"));
         //L'oggetto 
         mMailMessage.Subject = "Richiesta informazioni per sala congressi da sito web HotelVerri";
         //Il corpo 

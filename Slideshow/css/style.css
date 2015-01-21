@@ -1,9 +1,9 @@
 .ei-slider{
-	position: relative;
+	position:absolute;
 	width: 100%;
 	max-width: 1920px;
-	height: 400px;
-	margin: 0 auto;
+	height: 500px;
+    z-index:-1;
 }
 .ei-slider-loading{
 	width: 100%;

@@ -63,11 +63,9 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <asp:Button ID="InviaButton" OnClick="InviaButton_Click" runat="server" Text="Invia" />
-            </td>
-            <td>
-                <asp:Button ID="Button2" CommandName="Delete" runat="server" Text="Annulla" />
+            <td colspan="2">
+                <asp:Button ID="InviaButton" OnClick="InviaButton_Click" ForeColor="Green" runat="server" Text="Invia" />
+                <asp:Button ID="Button2" CommandName="Delete" ForeColor="Red" runat="server" Text="Annulla" />
             </td>
         </tr>
     </table>
