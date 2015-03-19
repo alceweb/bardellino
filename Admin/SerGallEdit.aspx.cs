@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
-
 
 public partial class Admin_SerGallEdit : System.Web.UI.Page
 {
@@ -29,16 +27,13 @@ public partial class Admin_SerGallEdit : System.Web.UI.Page
         String path = Server.MapPath("~/Images/Servizi/");
         if (FileUpload1.HasFile)
         {
-            foreach (var file in FileUpload1.PostedFiles)
-            {
-                //Recupero l'estensione del file
-                string estensione = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName).Substring(1);
-                //Imposto il nome file in base alla data giorno mese anno - ora minuti secondi
-                string nf = DateTime.Now.ToString("ddMMyyyy-HHmmss");
-                //Imposto il path completo del file
-                string nomefile = path + n + "-" + nf + "." + estensione;
-                FileUpload1.SaveAs(nomefile);
-            }
+            //Recupero l'estensione del file
+            string estensione = System.IO.Path.GetExtension(FileUpload1.PostedFile.FileName).Substring(1);
+            //Imposto il nome file in base alla data giorno mese anno - ora minuti secondi
+            string nf = DateTime.Now.ToString("ddMMyyyy-HHmmss");
+            //Imposto il path completo del file
+            string nomefile = path + n + "-" + nf + "." + estensione;
+            FileUpload1.SaveAs(nomefile);
             // Avvisa dell'avvenuto upload.
             LblUploadOk.ForeColor = System.Drawing.Color.Green;
             LblUploadOk.Text = "Immagine caricata corretamente.";

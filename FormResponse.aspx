@@ -9,7 +9,7 @@
     <tr>
         <td>
             <h2>La tua richiesta è stata inoltrata</h2>
-            <h3>Richiesta informazioni</h3><hr />
+            <img src="Images/ok.png" /><h3></h3><hr />
             <p>Verrai contattato dal personale addetto</p>
         </td>
     </tr>

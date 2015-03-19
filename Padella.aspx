@@ -55,7 +55,7 @@
         </script><br /><br />
     <div style="margin-top:480px" >
 <h2>La padella e la brace</h2>
-    <h3>Descrizione della Padella e la Brace</h3>
+    <h3>Vieni a trovarci per assaggiare le nostre specialità alla griglia e non solo...</h3>            
 <%--        <asp:ListView ID="ListView1" runat="server" SelectedIndex="-1" DataKeyNames="Id" DataSourceID="SqlDataSource1">
             <EmptyDataTemplate>
                 <span></span>

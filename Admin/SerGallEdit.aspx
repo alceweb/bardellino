@@ -51,7 +51,7 @@
             </td>
             <td>
                 <asp:Panel ID="pnlupload" runat="server" Visible="false">
-                    <asp:FileUpload BackColor="#e6dbb4" AllowMultiple="true" ID="FileUpload1" runat="server" />
+                    <asp:FileUpload BackColor="#e6dbb4" ID="FileUpload1" runat="server" />
                     <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Upload" /><br />
                     <asp:Label ID="LblUploadOk" runat="server"></asp:Label>
                 </asp:Panel>

@@ -8,5 +8,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
     <p style="padding-top:50px">qui</p>
+    <asp:FileUpload ID="FileUpload1" AllowMultiple="true"  runat="server" />
+    <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Button" />
+    <asp:Label ID="LblUploadOk" runat="server" Text="Label"></asp:Label>
 </asp:Content>
 

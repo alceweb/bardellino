@@ -18,7 +18,7 @@
                      <ItemTemplate>
                          <li>
                              <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
-                             <div class="ei-title">
+                             <div class="ei-title" style="font-family: 'Kunstler Script'">
                              <h2></h2>
                              <h3></h3>
 
@@ -80,10 +80,13 @@
             </EmptyDataTemplate>
             <ItemTemplate>
                 <div class="OffertaDef">
-                <div class="OffertaDefTitolo">
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Titolo") %>'></asp:Label>
-                </div>
-                <asp:Label ID="Label2" runat="server" Text='<%# Eval("Offerta") %>'></asp:Label>
+                    <div class="OffertaDefTitolo">
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Titolo") %>'></asp:Label>
+                    </div>
+                    <span style="text-align: center">
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Offerta") %>'></asp:Label>
+
+                    </span>
 
                 </div>
             </ItemTemplate>

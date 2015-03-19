@@ -16,6 +16,10 @@ public partial class Content : System.Web.UI.Page
     {
         pnlForm.Visible = true;
     }
+    protected void LinkButton2_Click(object sender, EventArgs e)
+    {
+        pnlForm.Visible = true;
+    }
     protected void InviaButton_Click(object sender, EventArgs e)
     {
         ////Preparo i campi della mail

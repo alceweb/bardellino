@@ -236,10 +236,13 @@ h5, h6 {
     background-color: rgba(65, 51, 23, 0.6);
 }
 .OffertaDefTitolo {
-    width:100%;
+    border-width: thin;
+    border-color: #E1D3A2;
+    width: 100%;
     font-weight: bold;
     text-transform: uppercase;
-    text-align:center;
+    text-align: center;
+    border-bottom-style: inset;
 }
 
 
@@ -1050,6 +1053,7 @@ tr.pager td {
     color:#000;
 }
 .tblFormP {
+    margin-top:0px;
     width: 500px;
     float:left;
     text-align: center;

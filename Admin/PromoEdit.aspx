@@ -54,6 +54,12 @@
                 <asp:ListView ID="ListView2" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource2">
                     <ItemTemplate>
                         <tr>
+                            <td>
+                                <asp:Button ID="Button2" ForeColor="green" runat="server" CommandName="Edit" Text="Modifica" />
+                                <asp:Button ID="Button3" ForeColor="red" OnClientClick='return confirm("Stai cancellando definitifamente una promo!!! Continuare?")' runat="server" CommandName="Delete" Text="Elimina" />
+                            </td>
+                        </tr>
+                        <tr>
                             <td style="min-width: 400px">
                                 <h3>
                                     <asp:Label CssClass="label" ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h3>

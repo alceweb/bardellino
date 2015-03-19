@@ -9,7 +9,7 @@
         <tr>
             <td>
     <asp:Panel ID="pnlForm" Visible="false" runat="server">
-    <table class="tblFormP" >
+    <table class="tblFormP" ><hr />
         <tr>
             <td colspan="2">
                 <h2>Richiesta informazioni</h2>
@@ -82,25 +82,15 @@
             <span>Non è stato restituito alcun dato.</span>
         </EmptyDataTemplate>
         <ItemTemplate>
-                <div style="margin:auto; text-align:center">
+                <div style="margin:auto; text-align:center"><hr />
+            <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2><br />
             <img src='<%# "Images/Promo/" + Eval("Id") + ".jpg" %>'/><br />
-
-                </div>
-            <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2>
-            <h3><asp:Label ID="PromoLabel" runat="server" Text='<%# Eval("Promo") %>' /></h3><hr />
+            <asp:LinkButton ID="LinkButton2" OnClick="LinkButton2_Click" runat="server">Contattaci per informazioni</asp:LinkButton><hr />
+            <p><asp:Label ID="PromoLabel" runat="server" Text='<%# Eval("Promo") %>' /></p><hr />
             <asp:LinkButton ID="LinkButton1" OnClick="LinkButton1_Click" runat="server">Contattaci per informazioni</asp:LinkButton>
+                </div>
             </span>
         </ItemTemplate>
-        <SelectedItemTemplate>
-                <div style="margin:auto; text-align:center">
-            <img src='<%# "Images/Promo/" + Eval("Id") + ".jpg" %>'/><br />
-
-                </div>
-            <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2>
-            <h3><asp:Label ID="PromoLabel" runat="server" Text='<%# Eval("Promo") %>' /></h3><hr />
-            <p>qui la form con la richiesta informazioni</p>
-            </span>
-        </SelectedItemTemplate>
         <LayoutTemplate>
             <div class="Promo" id="itemPlaceholderContainer" runat="server" style="">
                 <span  runat="server" id="itemPlaceholder" />
