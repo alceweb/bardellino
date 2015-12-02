@@ -18,7 +18,7 @@
 
             </td>
             <td>
-                <asp:TextBox ID="NomeTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="NomeTextBox" required="required" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
@@ -28,7 +28,7 @@
 
             </td>
             <td>
-                <asp:TextBox ID="CognomeTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="CognomeTextBox" required="required" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
@@ -38,7 +38,7 @@
 
             </td>
             <td>
-                <asp:TextBox ID="MailTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="MailTextBox" required="required" type="email" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:TextBox Height="500px" ID="RichiestaTtBox1" TextMode="MultiLine" runat="server"></asp:TextBox><br />
+                <asp:TextBox Height="500px" ID="RichiestaTtBox1" required="required" TextMode="MultiLine" runat="server"></asp:TextBox><br />
             </td>
         </tr>
         <tr>

@@ -9,7 +9,7 @@
         <tr>
             <td>
     <asp:Panel ID="pnlForm" Visible="false" runat="server">
-    <table class="tblFormP" ><hr />
+    <table class="tblFormP" >
         <tr>
             <td colspan="2">
                 <h2>Richiesta informazioni</h2>
@@ -18,58 +18,36 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="NomeLabel" runat="server" Text="Nome"></asp:Label>
-
-            </td>
-            <td>
-                <asp:TextBox ID="NomeTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="NomeTextBox" CssClass="textForm" required="required" placeholder="Nome" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="CognomeLabel" runat="server" Text="Cognome"></asp:Label>
-
-            </td>
-            <td>
-                <asp:TextBox ID="CognomeTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="CognomeTextBox" CssClass="textForm" required="required" placeholder="Cognome" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="MailLabel" runat="server" Text="Mail"></asp:Label>
-
-            </td>
-            <td>
-                <asp:TextBox ID="MailTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="MailTextBox" CssClass="textForm" required="required" type="email" placeholder="Email" runat="server"></asp:TextBox><br />
 
             </td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="TelLabel" runat="server" Text="Telefono"></asp:Label>
-
+                <asp:TextBox ID="TelTextBox" CssClass="textForm" required="required" placeholder="Telefono" runat="server"></asp:TextBox><br />
             </td>
+        </tr>
+        <tr>
             <td>
-                <asp:TextBox ID="TelTextBox" runat="server"></asp:TextBox><br />
+                <asp:TextBox Height="200px" Width="300px" CssClass="textForm" ID="RichiestaTtBox1" required="required" placeholder="Scrivi la tua richiesta" TextMode="MultiLine" runat="server"></asp:TextBox><br />
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                <asp:label ID="RichiestaLabel" runat="server" Text="Richiesta"/>
-
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <asp:TextBox Height="500px" ID="RichiestaTtBox1" TextMode="MultiLine" runat="server"></asp:TextBox><br />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
+            <td >
                 <asp:Button ID="InviaButton" OnClick="InviaButton_Click" ForeColor="Green" runat="server" Text="Invia" />
-                <asp:Button ID="ChiudiButton" OnClick="ChiudiButton_Click" runat="server" Text="Chiudi" />
+                <asp:Button ID="ChiudiButton" OnClick="ChiudiButton_Click" runat="server" Text="Chiudi" CausesValidation="False" UseSubmitBehavior="False" />
             </td>
         </tr>
     </table>
@@ -87,7 +65,7 @@
             <img src='<%# "Images/Promo/" + Eval("Id") + ".jpg" %>'/><br />
             <asp:LinkButton ID="LinkButton2" OnClick="LinkButton2_Click" runat="server">Contattaci per informazioni</asp:LinkButton><hr />
             <p><asp:Label ID="PromoLabel" runat="server" Text='<%# Eval("Promo") %>' /></p><hr />
-            <asp:LinkButton ID="LinkButton1" OnClick="LinkButton1_Click" runat="server">Contattaci per informazioni</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" OnClick="LinkButton1_Click" runat="server">Contattaci per informazioni</asp:LinkButton><br /><br />
                 </div>
             </span>
         </ItemTemplate>

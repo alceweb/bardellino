@@ -59,12 +59,12 @@
                         <div style="font-weight:bold; text-align:center; width:100%">
                             Chiedi informazioni<br />
                         </div>
-                    Nome  <asp:TextBox ID="TextBoxNome" runat="server"></asp:TextBox><br />
-                    Tel   <asp:TextBox ID="TextBoxTelefono" runat="server"></asp:TextBox><br />
-                    Mail  <asp:TextBox ID="TextBoxMail" runat="server"></asp:TextBox><br />
-                    Mex   <asp:TextBox ID="TextBoxMessaggio" Width="300px" runat="server" TextMode="MultiLine"></asp:TextBox><hr />
-                        <asp:Button ID="InviaButton" OnClick="InviaButton_Click" runat="server" ForeColor="Green" Text="Invia" />
-                        <asp:Button ID="CancelButton1" OnClick="CancelButton1_Click" CausesValidation="false" ForeColor="Red" runat="server" Text="Annulla" />
+                    <asp:TextBox ID="TextBoxNome" CssClass="textForm" required="required" placeholder="Nome Cognome" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxTelefono" CssClass="textForm" required="required" placeholder="Telefono" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxMail" CssClass="textForm" required="required" placeholder="Email" type="email" runat="server"></asp:TextBox><br />
+                    <asp:TextBox ID="TextBoxMessaggio" CssClass="textForm" required="required" placeholder="Richiesta" Width="300px" runat="server" TextMode="MultiLine"></asp:TextBox><hr />
+                        <asp:Button ID="InviaButton" CssClass="textForm" OnClick="InviaButton_Click" runat="server" ForeColor="Green" Text="Invia" />
+                        <asp:Button ID="CancelButton1" CssClass="textForm" OnClick="CancelButton1_Click" CausesValidation="false" ForeColor="Red" runat="server" Text="Annulla" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nome" ControlToValidate="TextBoxNome" Display="None"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Tel" ControlToValidate="TextBoxTelefono" Display="None"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxMail" ErrorMessage="Mail" Display="None"></asp:RequiredFieldValidator>
