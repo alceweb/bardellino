@@ -32,6 +32,8 @@ public partial class Content : System.Web.UI.Page
         //Aggiungo il destinatario 
         mMailMessage.To.Add(new MailAddress(to));
         mMailMessage.To.Add(new MailAddress("cascinabardellino@gmail.com"));
+        mMailMessage.To.Add(new MailAddress("mariangela.cascinabardellino@gmail.com"));
+        //mMailMessage.To.Add(new MailAddress("commerciale@cascinabardellino.it"));
         //L'oggetto 
         mMailMessage.Subject = "Richiesta informazioni da sito web Cascina Bardellino";
         //Il corpo 

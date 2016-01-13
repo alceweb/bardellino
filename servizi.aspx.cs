@@ -41,6 +41,7 @@ public partial class servizi : System.Web.UI.Page
         mMailMessage.To.Add(new MailAddress(to));
         mMailMessage.To.Add(new MailAddress("cascinabardellino@gmail.com"));
         mMailMessage.To.Add(new MailAddress("mariangela.cascinabardellino@gmail.com"));
+        mMailMessage.To.Add(new MailAddress("commerciale@cascinabardellino.it"));
         //L'oggetto 
         mMailMessage.Subject = "Richiesta informazioni da sito web Cascina Bardellino";
         //Il corpo 
@@ -55,8 +56,8 @@ public partial class servizi : System.Web.UI.Page
         mSmtpClient.Send(mMailMessage);
         Response.Redirect("FormResponseSer.aspx");
     }
-    protected void CancelButton1_Click(object sender, EventArgs e)
-    {
-        ListView1.SelectedIndex = -1;
-    }
+    //protected void CancelButton1_Click(object sender, EventArgs e)
+    //{
+    //    ListView1.SelectedIndex = -1;
+    //}
 }

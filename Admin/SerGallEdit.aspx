@@ -60,7 +60,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                         <span class="img">
-                            <a class="group1" href="<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>">
+                            <a target="_blank" class="group1" href="../<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>">
                                 <img style="margin: 5px; height: 100px; float: left" src='../<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
                             </a>
                         </span>

@@ -76,8 +76,8 @@
                         </tr>
                         <tr>
                             <td>
-                                <asp:Button ID="EditButton" ForeColor="green" runat="server" CommandName="Edit" Text="Modifica" />
-                                <asp:Button ID="DeleteButton" ForeColor="red" OnClientClick='return confirm("Stai cancellando definitifamente una Offerta!!! Continuare?")' runat="server" CommandName="Delete" Text="Elimina" />
+                                <asp:Button ID="EditButton" ForeColor="Green" runat="server" CommandName="Edit" Text="Modifica" />
+                                <asp:Button ID="DeleteButton" ForeColor="red"  OnClientClick='return confirm("Stai cancellando definitifamente una Offerta!!! Continuare?")' runat="server" CommandName="Delete" Text="Elimina" />
                             </td>
                         </tr>
                     </ItemTemplate>

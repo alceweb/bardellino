@@ -15,7 +15,7 @@ public partial class Contatti : System.Web.UI.Page
     protected void InviaButton_Click(object sender, EventArgs e)
     {
         ////Preparo i campi della mail
-        String from = "webservice@cr-consult.it";
+        String from = "webservice@cascinabardellino.it";
         String to = "cesare@cr-consult.eu";
         //Istanzio la classe che rappresenta il messaggio 
         MailMessage mMailMessage = new MailMessage();
@@ -25,6 +25,7 @@ public partial class Contatti : System.Web.UI.Page
         mMailMessage.To.Add(new MailAddress(to));
         mMailMessage.To.Add(new MailAddress("cascinabardellino@gmail.com"));
         mMailMessage.To.Add(new MailAddress("mariangela.cascinabardellino@gmail.com"));
+        //mMailMessage.To.Add(new MailAddress("commerciale@cascinabardellino.it"));
         //L'oggetto 
         mMailMessage.Subject = "Richiesta informazioni da sito web Cascina Bardellino";
         //Il corpo 
