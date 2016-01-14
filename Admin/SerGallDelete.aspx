@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Gestione gallerie servizi" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="SerGallEdit.aspx.cs" Inherits="Admin_SerGallEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true" CodeFile="SerGallDelete.aspx.cs" Inherits="Admin_SerGallDelete" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -50,35 +50,20 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnString %>" SelectCommand="SELECT * FROM [baserv] ORDER BY [Titolo]"></asp:SqlDataSource>
             </td>
             <td>
-                <asp:Panel ID="pnlupload" runat="server" Visible="false">
-                    <h3>Aggiungi immagine</h3>
-                    <asp:FileUpload BackColor="#e6dbb4" ID="FileUpload1" runat="server" />
-                    <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Upload" /><br />
-                    <asp:Label ID="LblUploadOk" runat="server"></asp:Label><hr />
-                </asp:Panel>
-                <asp:ListView ID="listaListView" runat="server">
+                <asp:ListView ID="ListView2" runat="server">
                     <ItemTemplate>
-                        <div style="float:left">
+                        <div class="div1">
 
-                                    <span >
-                                        <a target="_blank" class="group1" href="../<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>">
-                                            <img style="margin: 5px; height: 100px; float: left" src='../<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
-                                        </a><br />
+                                <asp:LinkButton ID="lnkDownload" Text="Download" CommandArgument='<%# Eval("Value") %>' runat="server" OnClick="DownloadFile"></asp:LinkButton>
+                                - 
+                                    <asp:LinkButton ID="lnkDelete" Text="Cancella" CommandArgument='<%# Eval("Value") %>' OnClientClick='return confirm("Stai cancellando un immagine! Continuare?")' runat="server" OnClick="DeleteFile" /><br />
+                                <a target="_blank" href='<%# "/Images/Servizi/" + Eval("Text") %>'><img src='<%# "/Images/Servizi/" + Eval("Text") %>' /></a><br />
                         </div>
-
                     </ItemTemplate>
-                    <LayoutTemplate>
-                        <div runat="server" id="itemPlaceholderContainer">
-                                <div runat="server" id="itemPlaceholder">
-
-                                </div>
-                            </tr>
-                        </div>
-                    </LayoutTemplate>
                 </asp:ListView>
             </td>
         </tr>
     </table>
-    <asp:Label ID="Label1" runat="server" ></asp:Label>
+
 </asp:Content>
 

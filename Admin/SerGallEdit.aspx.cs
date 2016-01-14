@@ -15,8 +15,8 @@ public partial class Admin_SerGallEdit : System.Web.UI.Page
         string cartella = "~/Images/";
         string num = ListView1.SelectedValue.ToString();
         string[] immagini = System.IO.Directory.GetFiles(Server.MapPath(cartella), "Servizi/" + num + "-*jpg*");
-        lista.DataSource = immagini;
-        lista.DataBind();
+        listaListView.DataSource = immagini;
+        listaListView.DataBind();
         pnlupload.Visible = true;
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -45,4 +45,5 @@ public partial class Admin_SerGallEdit : System.Web.UI.Page
             LblUploadOk.Text = "Non hai scelto nessuna immagine.";
         }
     }
+
 }

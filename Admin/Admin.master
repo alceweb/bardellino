@@ -59,7 +59,8 @@
                     </asp:MenuItem>
                     <asp:MenuItem Text="Servizi" Value="Servizi">
                         <asp:MenuItem Text="Modifica" NavigateUrl="~/Admin/SerEdit.aspx" Value="Modifica"></asp:MenuItem>
-                        <asp:MenuItem Text="Gestione galleria" Value="Gestione galleria" NavigateUrl="~/Admin/SerGallEdit.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Aggiungi immagini" Value="Aggiungi immagini" NavigateUrl="~/Admin/SerGallEdit.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Cancella immagini" Value="Cancella immagini" NavigateUrl="~/Admin/SerGallDelete.aspx"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>
                 <StaticHoverStyle BackColor="#284E98" ForeColor="White" />

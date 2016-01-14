@@ -282,7 +282,6 @@ footer {
     text-shadow: 0px 0px 4px #fff;
     bottom: 0;
     background-color:rgba(99, 83, 60, 0.57);
-    position:absolute;
 }
 
 /* site title
@@ -769,6 +768,28 @@ tr.pager td {
     -ms-transition: all 1s ease;
     transition: all 1s ease;
     }
+.div1{
+    float:left;
+    border: solid thin #000;
+    border-width: 0px 0px 1px 0px;
+    margin:15px;
+    text-align:center;
+}
+.div1 img{
+    height:100px;
+    margin:10px;
+    box-shadow: 0px 0px 5px #000;
+    border-radius:5px;
+ transition:all 1s ease;
+}
+.div1 img:hover{
+-webkit-transform:scale(1.2); 
+-moz-transform:scale(1.2);
+-o-transform:scale(1.2);
+ -ms-transform: scale(1.2);
+opacity:0.7;
+}
+
 /********************
 *   Mobile Styles   *
 ********************/
