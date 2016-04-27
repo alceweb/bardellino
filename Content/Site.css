@@ -244,7 +244,12 @@ h5, h6 {
 .textForm{
     border-radius:5px;
 }
-
+.pnl-content{
+    width:0px;
+}
+.pnl-content1{
+    width:200px;
+}
 /* main layout
 ----------------------------------------------------------*/
 .content-wrapper {
@@ -283,7 +288,8 @@ footer {
     bottom: 0;
     background-color:rgba(99, 83, 60, 0.57);
 }
-
+footer img{
+}
 /* site title
 ----------------------------------------------------------*/
 .site-title {
@@ -789,6 +795,138 @@ tr.pager td {
  -ms-transform: scale(1.2);
 opacity:0.7;
 }
+/*CSS ALMISH&CESAREWEB*/
+.header_logo {
+    font-family: 'kunstler Script';
+    font-size: 8em;
+    float: left;
+    text-shadow: 0px 0px 16px #fff;
+    color:#000;
+}
+.header_block {
+    border-top: thin solid #fff; /*background-image: url('../Images/Logo.jpg');*/
+    height: 140px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    border-top-color: #fff;
+    border-bottom-color: #907D53;
+    background-image: url('../Images/Sfondo.png');
+}
+.address_block {
+    color: #F5F3EB;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 6.5px;
+    right:0;
+    float: right;
+    text-align: right;
+    text-shadow: 0px 0px 4px #000;
+    position:absolute;
+}
+.min-height {
+    min-height:200px;
+}
+.SlideShow {
+    box-shadow: 0px 0px 20px 8px #333;
+}
+
+/*Tile*/
+.titoloVetrina {
+    text-align:center;
+}
+.tblTile {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    /*box-shadow: 15px 15px 20px 0px #333;
+    -webkit-box-shadow: 15px 15px 20px 0px #333;
+    -moz-box-shadow: 15px 15px 20px 0px #333;*/
+}
+    .tblTile td {
+    width: 20%;
+    padding-top: 15px;
+}
+
+
+.float-shadow {
+    width:90%;
+    margin:auto;
+  display: inline-block;
+  position: relative;
+  z-index:2;
+    border-radius:5px; 
+    box-shadow: 5px 5px 20px 5px #111;
+    -webkit-box-shadow: 5px 5px 20px 5px #111;
+-moz-box-shadow: 5px 5px 20px 5px #111;
+    border: thin solid #FFFFFF; 
+    margin-top:22px; 
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.float-shadow:hover {
+   /* move the element up by 25px */
+   z-index:0;
+ -webkit-transform: translateY(-35px);
+  transform: translateY(-35px);
+    border-radius:45px; 
+    opacity: 0.5; 
+    transition: all 1s ease;
+}
+/*Form info*/
+.tblForm {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    background-image: url('../Images/Sfondo.png');
+    text-shadow: 0px 0px 4px #fff;
+}
+    .tblForm td {
+    padding-right: 25px;
+    padding-left: 25px;
+    background-repeat: repeat;
+    color:#000;
+}
+.tblFormP {
+    margin-top:10px;
+    float:left;
+    text-align: center;
+    padding: 15px;
+    background-image: url('../Images/Sfondo.png');
+    text-shadow: 0px 0px 4px #fff;
+}
+    .tblFormP td {
+    padding-right: 25px;
+    padding-left: 25px;
+    background-repeat: repeat;
+    color:#000;
+}
+    /*Menu footer*/
+.menuF {
+    float: left;
+    color: #FFFFFF;
+}
+    .menuF a {
+    border: hidden;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    color: #534731;
+}
+    .menuF a:hover {
+    border:hidden;
+    background: rgba(31, 24, 12, 0.85);
+    border-radius: 5px;
+}
+
+
 
 /********************
 *   Mobile Styles   *
@@ -802,7 +940,7 @@ opacity:0.7;
         float: none;
     }
 .header_logo {
-    visibility:hidden;
+    font-size:6em;
     }
     /* logo */
     header .site-title {
@@ -955,7 +1093,9 @@ opacity:0.7;
         float: none;
         width: auto;
     }
-
+.address_block {
+    visibility:hidden;
+}
     /* footer
     ----------------------------------------------------------*/
     footer .float-left,
@@ -973,135 +1113,15 @@ opacity:0.7;
             margin: 0;
         }
 }
+
+@media only screen and (max-width: 450px) {
+.header_logo {
+    font-size:4em;
+    }
+.address_block {
+    visibility:hidden;
+}
+
+}
 /* END: Mobile Styles */
 
-/*CSS ALMISH&CESAREWEB*/
-.header_logo {
-    font-family: 'kunstler Script';
-    font-size: 8em;
-    float: left;
-    text-shadow: 0px 0px 16px #fff;
-    color:#000;
-}
-.header_block {
-    border-top: thin solid #fff; /*background-image: url('../Images/Logo.jpg');*/
-    height: 140px;
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-top-width: thin;
-    border-bottom-width: thin;
-    border-top-color: #fff;
-    border-bottom-color: #907D53;
-    background-image: url('../Images/Sfondo.png');
-}
-.address_block {
-    color: #F5F3EB;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 6.5px;
-    right:0;
-    float: right;
-    text-align: right;
-    text-shadow: 0px 0px 4px #000;
-    position:absolute;
-}
-.min-height {
-    min-height:200px;
-}
-.SlideShow {
-    box-shadow: 0px 0px 20px 8px #333;
-}
-
-/*Tile*/
-.titoloVetrina {
-    text-align:center;
-}
-.tblTile {
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    /*box-shadow: 15px 15px 20px 0px #333;
-    -webkit-box-shadow: 15px 15px 20px 0px #333;
-    -moz-box-shadow: 15px 15px 20px 0px #333;*/
-}
-    .tblTile td {
-    width: 20%;
-    padding-top: 15px;
-}
-
-
-.float-shadow {
-    width:90%;
-    margin:auto;
-  display: inline-block;
-  position: relative;
-  z-index:2;
-    border-radius:5px; 
-    box-shadow: 5px 5px 20px 5px #111;
-    -webkit-box-shadow: 5px 5px 20px 5px #111;
--moz-box-shadow: 5px 5px 20px 5px #111;
-    border: thin solid #FFFFFF; 
-    margin-top:22px; 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-.float-shadow:hover {
-   /* move the element up by 25px */
-   z-index:0;
- -webkit-transform: translateY(-35px);
-  transform: translateY(-35px);
-    border-radius:45px; 
-    opacity: 0.5; 
-    transition: all 1s ease;
-}
-/*Form info*/
-.tblForm {
-    width: 300px;
-    margin: auto;
-    text-align: center;
-    padding: 15px;
-    background-image: url('../Images/Sfondo.png');
-    text-shadow: 0px 0px 4px #fff;
-}
-    .tblForm td {
-    padding-right: 25px;
-    padding-left: 25px;
-    background-repeat: repeat;
-    color:#000;
-}
-.tblFormP {
-    margin-top:10px;
-    float:left;
-    text-align: center;
-    padding: 15px;
-    background-image: url('../Images/Sfondo.png');
-    text-shadow: 0px 0px 4px #fff;
-}
-    .tblFormP td {
-    padding-right: 25px;
-    padding-left: 25px;
-    background-repeat: repeat;
-    color:#000;
-}
-    /*Menu footer*/
-.menuF {
-    float: left;
-    color: #FFFFFF;
-}
-    .menuF a {
-    border: hidden;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-    color: #534731;
-}
-    .menuF a:hover {
-    border:hidden;
-    background: rgba(31, 24, 12, 0.85);
-    border-radius: 5px;
-}

@@ -4,6 +4,19 @@
     <script src="Scripts/jquery-2.1.1.min.js"></script>
     <script src="Scripts/jquery.colorbox.js"></script>
     <link href="Content/colorbox.css" rel="stylesheet" />
+    <link href="Content/demo.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />    
+    		<noscript>
+			<style>
+				.st-accordion ul li{
+					height:auto;
+				}
+				.st-accordion ul li > a span{
+					visibility:hidden;
+				}
+			</style>
+		</noscript>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" Runat="Server">
 </asp:Content>
@@ -18,80 +31,58 @@
              $(".group5").colorbox({ maxHeight: '100%', rel: 'group5', transition: 'fade' });
          });
 		</script>
-    <div>
-     <div class="rep1" style="float:right" >
-         <asp:Label ID="LabelRepeator" runat="server"></asp:Label>
-        <asp:Repeater ID="lista" runat="server">
-            <HeaderTemplate>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <div style="width:100%; margin:auto">
-                    <a class='<%# "group" + ListView1.SelectedValue.ToString() %>' href="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>">
-                        <img src="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>" />
-                    </a>
-                </div>
-            </ItemTemplate>
-            <FooterTemplate></FooterTemplate>
-        </asp:Repeater>
-    </div>
-   <asp:ListView ID="ListView1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" SelectedIndex="-1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
-        <ItemTemplate>
-            <tr >
-                <td style="background-image: url('Images/Sfondo.png'); max-width:300px">
-                    <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2><br />
-                    <asp:Label ID="DescrizioneLabel" runat="server" Text='<%# Eval("Descrizione") %>' />
-                </td>
-                <td style="text-align:center">
-                    <asp:LinkButton ID="linkbGalle" CommandName="Select" CausesValidation="false" runat="server"><img src='<%# "Images/Servizi/" + Eval("Id") + ".jpg"  %>' /></asp:LinkButton>
-                    <a class='<%# "group" + Eval("Id")%>' href='<%# "Images/Servizi/" + Eval("Id") + ".jpg"%>'></a><br />
-                </td>
-            </tr>
-        </ItemTemplate>
-        <SelectedItemTemplate>
-            <tr style="background-color:#726249">
-                <td style="background-image: url('Images/Sfondo.png'); max-width:300px">
-                    <h2><asp:Label ID="TitoloLabel" runat="server" Text='<%# Eval("Titolo") %>' /></h2><br />
-                    <asp:Label ID="DescrizioneLabel" runat="server" Text='<%# Eval("Descrizione") %>' />
-                </td>
+            <div class="container">
+            <div class="wrapper">
+                <div id="st-accordion" class="st-accordion">
+                    <ul>
+                       <asp:ListView ID="ListView1" OnItemDataBound="ListView1_ItemDataBound" OnSelectedIndexChanged="ListView1_SelectedIndexChanged" SelectedIndex="-1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+                            <ItemTemplate>
+                                <li>
+                                    <asp:LinkButton ID="LinkButton1" runat="server"><%#Eval("Titolo") %></asp:LinkButton>
+                                    <div class="st-content">
+                                        <p>
+                                            <asp:Label ID="DescrizioneLabel" runat="server" Text='<%# Eval("Descrizione") %>' /><br />
+                                            <asp:Label ID="lblId" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
+                                            <asp:Repeater ID="lista" runat="server">
+                                                <ItemTemplate>
+                                                    <span class="gall">
+                                                        <a class="group1" href="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>">
+                                                            <img src="<%# (Container.DataItem as string).Substring(Server.MapPath("./").Length).Replace("\\", "/") %>" />
+                                                        </a>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </p>
+                                        <div style ="text-align:center">
+                                            <asp:Button ID="Button1" CssClass="textForm" runat="server" ForeColor="green" Text="Chiedi informazioni" PostBackUrl="~/Contatti.aspx" />
+                                        </div>
+                                    </div>
+                                </li>
+                            </ItemTemplate>
 
-                <td>
-                    <div Style="float:right;text-align:right">
-                        <div style="font-weight:bold; text-align:center; width:100%">
-                            Chiedi informazioni<br />
-                        </div>
-                    <asp:TextBox ID="TextBoxNome" CssClass="textForm" required="required" placeholder="Nome Cognome" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="TextBoxTelefono" CssClass="textForm" required="required" placeholder="Telefono" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="TextBoxMail" CssClass="textForm" required="required" placeholder="Email" type="email" runat="server"></asp:TextBox><br />
-                    <asp:TextBox ID="TextBoxMessaggio" CssClass="textForm" required="required" placeholder="Richiesta" Width="300px" runat="server" TextMode="MultiLine"></asp:TextBox><hr />
-                        <asp:Button ID="InviaButton" CssClass="textForm" OnClick="InviaButton_Click" runat="server" ForeColor="Green" Text="Invia" />
-<%--                        <asp:Button ID="CancelButton1" CssClass="textForm" OnClick="CancelButton1_Click" CausesValidation="false" ForeColor="Red" runat="server" Text="Annulla" />--%>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Nome" ControlToValidate="TextBoxNome" Display="None"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Tel" ControlToValidate="TextBoxTelefono" Display="None"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxMail" ErrorMessage="Mail" Display="None"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato Mail non valido" ControlToValidate="TextBoxMail" Display="None" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Mex" ControlToValidate="TextBoxMessaggio" Display="None"></asp:RequiredFieldValidator>
-                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" HeaderText="Errore inserimento campi:" />                
-                     </div>
-                 </td>
-           </tr>
-        </SelectedItemTemplate>
-        <LayoutTemplate>
-            <div class="servizi" runat="server">
-                        <table class="tbl2" id="itemPlaceholderContainer" runat="server" border="0" style="">
-                            <tr id="itemPlaceholder" runat="server">
-                            </tr>
-                            <tr runat="server" style="">
-                            </tr>
-                        </table>
+                        </asp:ListView>
+                    </ul>
+                </div>
             </div>
-        </LayoutTemplate>
-     </asp:ListView>
+        </div>
+    <script src="Scripts/jquery.easing.1.3.js"></script>
+    <script src="Scripts/jquery.accordion.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				$('#st-accordion').accordion({
+					oneOpenedItem	: true
+				});
+				
+            });
+        </script>
+    <div>
      <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-         ConnectionString="<%$ ConnectionStrings:ConnString %>" 
-         SelectCommand="SELECT * FROM [baserv]">
+         ConnectionString="<%$ ConnectionStrings:ConnString %>">
      </asp:SqlDataSource>
     </div>
     <div>
     </div>
+
+
 </asp:Content>
 

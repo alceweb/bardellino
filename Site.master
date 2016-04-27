@@ -12,6 +12,7 @@
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/colorbox.css" rel="stylesheet" />
     <link href="~/Content/ui-calendar.css" rel="Stylesheet" type="text/css" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/icons.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
@@ -35,7 +36,7 @@
             ">
             </div>
             <header>
-                <div class="content-wrapper">
+                <div >
                     <div class="header_block">
                         <div class="header_logo">Cascina Bardellino</div>
                         <div class="address_block">
@@ -46,21 +47,15 @@
                             P.IVA 01927230167
                             <br />
                             Tel. 0373 419535 - 335 6943774/772<br />
-                       <a runat="server" href="https://www.facebook.com/pages/Cascina-Bardellino/541341465937610?fref=ts" target="_blank">
-                           <img style="padding-top:10px" title="Facebook Cascina Bardellino" src="Images/FacebookCascina.jpg" /></a>
-                       <a id="A6" runat="server" href="https://www.facebook.com/LaPadellaeLaBrace?fref=ts" target="_blank">
-                           <img style="padding-top:10px" title="Facebook La padella e la Brace" src="Images/FacebookPadella.jpg" /></a>
-
-
                         </div>
 
                     </div>
                     <ul id="menu">
                         <li><a id="A2" runat="server" href="~/Default.aspx">Home</a></li>
-                        <li><a id="A4" runat="server" href="~/Padella.aspx">La padella e la Brace</a></li>
+<%--                        <li><a id="A4" runat="server" href="~/Padella.aspx">La padella e la Brace</a></li>--%>
                         <li><a id="A3" runat="server" href="~/dove-siamo.aspx">Dove siamo</a></li>
                         <li><a id="A1" runat="server" href="~/Servizi.aspx">Servizi</a></li>
-                        <li><a id="A5" runat="server" href="~/Contatti.aspx">Contatto</a></li>
+                        <li><a id="A5" runat="server" href="~/Contatti.aspx">Contatti</a></li>
                         <li class="float-right"></li>
                     </ul>
                 
@@ -81,6 +76,14 @@
                 <span class="float-right">
                         &copy; 2015<a href="http://www.cr-consult.eu" target="_blank" style="font-size: 12px;"><em>Almish</em><span style="color: #FF0000">&amp;</span><em>Cesàre</em><span style="color: #FF0000">W</span><em>eb</em></a>
                 </span>
+                    <div>
+                <a runat="server" href="https://www.facebook.com/pages/Cascina-Bardellino/541341465937610?fref=ts" target="_blank">
+                <img title="Facebook Cascina Bardellino" src="Images/FacebookCascina.jpg" /></a>
+                <a id="A6" runat="server" href="https://www.facebook.com/LaPadellaeLaBrace?fref=ts" target="_blank">
+                <img title="Facebook La padella e la Brace" src="Images/FacebookPadella.jpg" /></a>
+
+                    </div>
+
                 </div>
             </footer>
 

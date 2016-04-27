@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-                <h4>Formato consigliato .jpg 640x480 oppure 800x600</h4><br /><br />
+                <h4>L'immagine deve essere orizzontale - Larghezza consigliata 1024px
+                </h4><br /><br />
     <div style="float:left; margin-right:30px">
                 <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1">
                     <EditItemTemplate>
@@ -23,7 +24,7 @@
                     <ItemTemplate>
                         <tr style="">
                             <td>
-                                <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Modifica" />
+                                <asp:Button ID="EditButton" runat="server" Text="Gestisci" PostBackUrl='<%# "~/Admin/SlideBEdit1.aspx?id=" + Eval("Id") %>' />
                             </td>
                             <td>
                                 <img src='<%# "../Slideshow/images/Bardellino/" + Eval("Id") + ".jpg" %>' />

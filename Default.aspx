@@ -17,7 +17,7 @@
                  <asp:Repeater ID="lista" runat="server" EnableTheming="False">
                      <ItemTemplate>
                          <li>
-                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
+                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("/").Length).Replace("\\", "/") %>' />
                              <div class="ei-title" style="font-family: 'Kunstler Script'">
                              <h2></h2>
                              <h3></h3>
@@ -33,7 +33,7 @@
                  <asp:Repeater ID="lista1" runat="server" EnableTheming="False">
                      <ItemTemplate>
                          <li><a href="#"></a>
-                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("~/").Length).Replace("\\", "/") %>' />
+                             <img style="margin: 5px; height: 100px; float: left" src='<%# (Container.DataItem as string).Substring(Server.MapPath("/").Length).Replace("\\", "/") %>' />
                          </li>
                      </ItemTemplate>
                  </asp:Repeater>
